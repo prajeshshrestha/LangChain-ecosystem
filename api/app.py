@@ -2,11 +2,14 @@ from fastapi import FastAPI
 from langchain.prompts import ChatPromptTemplate
 from langchain_community.llms import Ollama
 from langserve import  add_routes
+from dotenv import load_dotenv
 
 import uvicorn
 import os
 
-os.environ['LANGCHAIN_API_KEY'] = 'ls__70ac0c7d69d2495085aa3214029d50d7'
+load_dotenv()
+
+os.environ['LANGCHAIN_API_KEY'] = os.getenv('LANGCHAIN_API_KEY')
 
 # fastAPI - endpoints (routes)
 
